@@ -765,7 +765,7 @@ export class AppleAuthProvider {
 }
 
 export class FacebookAuthProvider {
-	static credential(accessToken: string) {
+	static credential(accessToken: string, nonce?: string) {
 		return AuthCredential.fromNative(com.google.firebase.auth.FacebookAuthProvider.getCredential(accessToken));
 	}
 }

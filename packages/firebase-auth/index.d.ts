@@ -261,7 +261,7 @@ export declare class AppleAuthProvider {
 }
 
 export declare class FacebookAuthProvider {
-	static credential(accessToken: string): AuthCredential;
+	static credential(accessToken: string, nonce?: string): AuthCredential;
 }
 
 export declare class GithubAuthProvider {

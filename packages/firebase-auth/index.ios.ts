@@ -716,7 +716,10 @@ export class AppleAuthProvider {
 }
 
 export class FacebookAuthProvider {
-	static credential(accessToken: string) {
+	static credential(accessToken: string, nonce?: string) {
+		if (nonce) {
+			return AuthCredential.fromNative(FIROAuthProvider.credentialWithProviderIDIDTokenRawNonce('facebook.com', accessToken, nonce));
+		}
 		return AuthCredential.fromNative(FIRFacebookAuthProvider.credentialWithAccessToken(accessToken));
 	}
 }
